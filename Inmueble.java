@@ -1,6 +1,6 @@
 package nare.tp_pa_v3;
 
-public class Inmueble{
+public class Inmueble {
     private String domicilio;
     private char jurisdiccion;
    

@@ -53,12 +53,12 @@ public class Logica {
         } 
           
         System.out.println("\nTotal de operaciones: " + (alquileres.size() + ventas.size()));
-        System.out.println("Total de comisiones por operaciones en CABA " + formatear(acumCABA));
-        System.out.println("Total de comisiones por operaciones en BsAs " + formatear(acumBsAs));
-        System.out.println("                                              ------------------");
-        System.out.println("                        Total comisiones    " + formatear(acumBsAs + acumCABA));
+        System.out.println("Total de comisiones por operaciones en CABA: " + formatear(acumCABA));
+        System.out.println("Total de comisiones por operaciones en BsAs: " + formatear(acumBsAs));
+        System.out.println("                                           ------------------");
+        System.out.println("                        Total comisiones   : " + formatear(acumBsAs + acumCABA));
 
-    }
+    }  
     
     // función que da formato monetario 
     public static String formatear(double valor){ 
