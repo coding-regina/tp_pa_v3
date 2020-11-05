@@ -2,19 +2,20 @@
  * <b>TRABAJO PRÁCTICO PROGRAMACIÓN APLICADA</b><br>
  * DOCENTE: FEDERICO CASSINELLI<br>
  * CICLO: 2020<br>
- * DOCUMENTACIÓN (Links):<br>
- * <ul>
- * <li><a href="{@docRoot}docs/TP.pdf">Consignas</a></li>
- * <li><a href="{@docRoot}docs/dc.pdf">Diagrama de clases</a></li>
- * <li><a href="{@docRoot}docs/juego_datos.pdf">Datos de prueba</a></li>
- * </ul>
  *
  */
 package nare.tp_pa_v4;
 
 /**
  * Clase abstracta<br>
- * Describe patrón de las operaciones con inmuebles
+ * Describe patrón de las operaciones con inmuebles<br>
+ * Asociada a la clase Inmueble, a la que integra como único atributo<br>
+ * Clases hijas: 
+ * <ul><li>Alquiler</li>
+ * <li>Venta</li></ul>
+ * 
+ * @see nare.tp_pa_v4.Alquiler
+ * @see nare.tp_pa_v4.Venta
  *
  * @author GRUPO FORMADO POR: Molares, Regina Noemí / Regensburger, Nadina
  * @version 4 11/03/20

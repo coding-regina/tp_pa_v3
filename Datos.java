@@ -2,12 +2,7 @@
  * <b>TRABAJO PRÁCTICO PROGRAMACIÓN APLICADA</b><br>
  * DOCENTE: FEDERICO CASSINELLI<br>
  * CICLO: 2020<br>
- * DOCUMENTACIÓN (Links):<br>
- * <ul>
- * <li><a href="{@docRoot}docs/TP.pdf">Consignas</a></li>
- * <li><a href="{@docRoot}docs/dc.pdf">Diagrama de clases</a></li>
- * <li><a href="{@docRoot}docs/juego_datos.pdf">Datos de prueba</a></li>
- * </ul>
+ *
  */
 package nare.tp_pa_v4;
 
@@ -22,15 +17,18 @@ import java.util.ArrayList;
  */
 /**
  * Clase para declarar variables, arrays, crear instancias, etc.
+ * Acumula valores totales
  *
  */
 public class Datos {
 
   public static ArrayList<Operacion> operaciones = new ArrayList();
+  public static double acumCABA = 0;
+  public static double acumBsAs = 0;
+  public static double total_comis = 0;
 
   public static void ignite() {
     Alquiler o1 = new Alquiler(new Inmueble("Aráoz 234", 'c'), 15000, 12);
-
     Alquiler o2 = new Alquiler(new Inmueble("Corrientes 234", 'b'), 25000, 36);
     Alquiler o3 = new Alquiler(new Inmueble("Cervantes 234", 'c'), 30000, 24);
     Venta o4 = new Venta(new Inmueble("Carlos Casares 5644", 'b'), 5600000);
@@ -45,9 +43,6 @@ public class Datos {
     o6.registrar_operacion();
     o7.registrar_operacion();
     calcular_totales();
-    
-    o1.get_tipo_operacion();
-    o4.get_tipo_operacion();
   }
 
   /**
@@ -63,8 +58,7 @@ public class Datos {
    *
    */
   public static void calcular_totales() {
-    double acumCABA = 0;
-    double acumBsAs = 0;
+   
     for (int i = 0; i < operaciones.size(); i++) {
       if (operaciones.get(i).inmueble.get_juris().equals("CABA")) {
         acumCABA += operaciones.get(i).get_comision();
@@ -72,11 +66,12 @@ public class Datos {
         acumBsAs += operaciones.get(i).get_comision();
       }
     }
+    total_comis = acumBsAs + acumCABA;
     System.out.println("\nTotal de operaciones: " + operaciones.size());
     System.out.println("Total de comisiones por operaciones en CABA: " + formatear(acumCABA));
     System.out.println("Total de comisiones por operaciones en BsAs: " + formatear(acumBsAs));
     System.out.println("                                           -----------------");
-    System.out.println("                        Total comisiones:    " + formatear(acumBsAs + acumCABA));
+    System.out.println("                        Total comisiones:    " + formatear(total_comis));
   }
 
   /**

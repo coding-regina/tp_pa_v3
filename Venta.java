@@ -2,12 +2,6 @@
  * <b>TRABAJO PRÁCTICO PROGRAMACIÓN APLICADA</b><br>
  * DOCENTE: FEDERICO CASSINELLI<br>
  * CICLO: 2020<br>
- * DOCUMENTACIÓN (Links):<br>
- * <ul>
- * <li><a href="{@docRoot}docs/TP.pdf">Consignas</a></li>
- * <li><a href="{@docRoot}docs/dc.pdf">Diagrama de clases</a></li>
- * <li><a href="{@docRoot}docs/juego_datos.pdf">Datos de prueba</a></li>
- * </ul>
  *
  */
 package nare.tp_pa_v4;
@@ -16,10 +10,9 @@ import static nare.tp_pa_v4.Datos.formatear;
 import static nare.tp_pa_v4.Datos.operaciones;
 
 /**
- * Clase Venta<br>
- * Modelo que invoca métodos de clase abstracta Operacion<br>
- * El atributo multiplicador define la comisión
- *
+ * Clase que modela objeto Venta<br>
+ * Invoca métodos de clase abstracta Operacion
+ * 
  * @see nare.tp_pa_v4.Operacion
  *
  * @author GRUPO FORMADO POR: Molares, Regina Noemí / Regensburger, Nadina
@@ -28,8 +21,7 @@ import static nare.tp_pa_v4.Datos.operaciones;
  */
 public class Venta extends Operacion {
 
-  private double precio;
-  private final double multiplicador = 0.2;
+  private double precio; 
 
   /**
    * Constructor
@@ -60,7 +52,7 @@ public class Venta extends Operacion {
    */
   @Override
   public double get_comision() {
-    return this.precio * this.multiplicador;
+    return this.precio * 0.2;
   }
 
   /**
